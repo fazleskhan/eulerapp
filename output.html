@@ -1,0 +1,273 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Prompt Evaluation Report</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                line-height: 1.6;
+                margin: 0;
+                padding: 20px;
+                color: #333;
+            }
+            .header {
+                background-color: #f0f0f0;
+                padding: 20px;
+                border-radius: 5px;
+                margin-bottom: 20px;
+            }
+            .summary-stats {
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+            .stat-box {
+                background-color: #fff;
+                border-radius: 5px;
+                padding: 15px;
+                box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+                flex-basis: 30%;
+                min-width: 200px;
+            }
+            .stat-value {
+                font-size: 24px;
+                font-weight: bold;
+                margin-top: 5px;
+            }
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                margin-top: 20px;
+            }
+            th {
+                background-color: #4a4a4a;
+                color: white;
+                text-align: left;
+                padding: 12px;
+            }
+            td {
+                padding: 10px;
+                border-bottom: 1px solid #ddd;
+                vertical-align: top;
+            }
+            tr:nth-child(even) {
+                background-color: #f9f9f9;
+            }
+            .output-cell {
+                white-space: pre-wrap;
+            }
+            .score {
+                font-weight: bold;
+                padding: 5px 10px;
+                border-radius: 3px;
+                display: inline-block;
+            }
+            .score-high {
+                background-color: #c8e6c9;
+                color: #2e7d32;
+            }
+            .score-medium {
+                background-color: #fff9c4;
+                color: #f57f17;
+            }
+            .score-low {
+                background-color: #ffcdd2;
+                color: #c62828;
+            }
+            .output {
+                overflow: auto;
+                white-space: pre-wrap;
+            }
+
+            .output pre {
+                background-color: #f5f5f5;
+                border: 1px solid #ddd;
+                border-radius: 4px;
+                padding: 10px;
+                margin: 0;
+                font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+                font-size: 14px;
+                line-height: 1.4;
+                color: #333;
+                box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+                overflow-x: auto;
+                white-space: pre-wrap; 
+                word-wrap: break-word; 
+            }
+
+            td {
+                width: 20%;
+            }
+            .score-col {
+                width: 80px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Prompt Evaluation Report</h1>
+            <div class="summary-stats">
+                <div class="stat-box">
+                    <div>Total Test Cases</div>
+                    <div class="stat-value">4</div>
+                </div>
+                <div class="stat-box">
+                    <div>Average Score</div>
+                    <div class="stat-value">8.8 / 10</div>
+                </div>
+                <div class="stat-box">
+                    <div>Pass Rate (≥7)</div>
+                    <div class="stat-value">100.0%</div>
+                </div>
+            </div>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Scenario</th>
+                    <th>Prompt Inputs</th>
+                    <th>Solution Criteria</th>
+                    <th>Output</th>
+                    <th>Score</th>
+                    <th>Reasoning</th>
+                </tr>
+            </thead>
+            <tbody>
+    
+            <tr>
+                <td>Testing with a humanities passage containing philosophical and historical topics mixed with proper nouns and abstract concepts</td>
+                <td class="prompt-inputs"><strong>content:</strong> Kant's categorical imperative fundamentally reshaped moral philosophy by proposing that ethical actions must be universalizable principles rather than contingent desires. This Enlightenment framework emerged during the 18th century as a response to empiricist challenges posed by Hume, who argued that reason alone could not ground morality. The distinction between noumena and phenomena became central to Kantian epistemology, suggesting that our knowledge is necessarily limited to appearances filtered through the structures of space and time. Later, Hegelian dialectics reinterpreted this framework through historical materialism, arguing that consciousness develops through contradictions resolved in successive epochs. These philosophical developments profoundly influenced subsequent thinkers including Nietzsche, who critiqued the ascetic ideal embedded in Kantian ethics, and Marx, who grounded dialectical reasoning in economic relations rather than abstract reason.</td>
+                <td class="criteria">• Extracts all major philosophical concepts and theories mentioned (e.g., categorical imperative, empiricism, dialectics)<br>• Includes proper nouns referring to key figures and philosophical traditions (e.g., Kant, Hume, Hegelian)<br>• Captures abstract concepts and historical periods relevant to the passage (e.g., Enlightenment, historical materialism)<br>• Returns output as a JSON array of strings with no duplicate entries</td>
+                <td class="output"><pre>```json
+[
+  "Categorical imperative",
+  "Moral philosophy",
+  "Universalizable principles",
+  "Enlightenment philosophy",
+  "18th century philosophy",
+  "Empiricism",
+  "David Hume",
+  "Reason and morality",
+  "Noumena and phenomena",
+  "Kantian epistemology",
+  "Space and time",
+  "Hegelian dialectics",
+  "Historical materialism",
+  "Consciousness",
+  "Dialectical contradictions",
+  "Friedrich Nietzsche",
+  "Ascetic ideal",
+  "Kantian ethics",
+  "Karl Marx",
+  "Economic relations",
+  "Abstract reason"
+]
+```</pre></td>
+                <td class="score-col"><span class="score score-high">9</span></td>
+                <td class="reasoning">The solution fully satisfies all mandatory requirements: it is a valid JSON array of strings containing topics from the passage, with no commentary, and nothing else in the response. It also performs well against secondary criteria by extracting major philosophical concepts, proper nouns for key figures, and historical periods. The extraction is thorough and accurate. Minor weaknesses include slight redundancy in related entries and some granularity choices, but these do not significantly detract from the overall quality. The solution demonstrates strong comprehension of the source material.</td>
+            </tr>
+        
+            <tr>
+                <td>Testing with a scientific passage containing domain-specific terminology, methodologies, and empirical findings that require distinguishing main topics from supporting details</td>
+                <td class="prompt-inputs"><strong>content:</strong> This study investigates the efficacy of CRISPR-Cas9 gene editing in reducing amyloid-beta accumulation within transgenic mouse models of Alzheimer's disease. We employed dual-guide RNA sequences targeting the BACE1 gene, a critical protease in amyloid precursor protein cleavage, combined with adeno-associated viral vector delivery to achieve sustained expression in hippocampal neurons. Quantitative proteomics analysis revealed a 67% reduction in soluble amyloid-beta oligomers and a 43% decrease in insoluble plaque burden compared to control cohorts after 12 weeks of treatment. Cognitive assessments using Morris water maze testing demonstrated significant improvements in spatial memory retention, with treated animals exhibiting 34% faster acquisition times and 28% increased platform zone occupancy. Notably, off-target editing analysis using whole-genome sequencing identified minimal off-target cleavage events, with only 2 potential sites showing marginal activity. These findings suggest CRISPR-Cas9-mediated BACE1 suppression as a viable therapeutic strategy for neurodegenerative pathology, though long-term safety profiles and immunogenicity responses require further investigation.</td>
+                <td class="criteria">• Extracts main research topics (CRISPR-Cas9 gene editing, amyloid-beta reduction, Alzheimer's disease models) distinct from methodological details and quantitative results<br>• Identifies all distinct scientific domains covered (gene editing technology, molecular pathology, cognitive assessment, genomic analysis)<br>• Omits specific numerical values, statistical measures, and experimental procedures that are supporting details rather than core topics</td>
+                <td class="output"><pre>```json
+[
+  "CRISPR-Cas9 gene editing",
+  "Amyloid-beta accumulation",
+  "Alzheimer's disease",
+  "Transgenic mouse models",
+  "BACE1 gene",
+  "Amyloid precursor protein",
+  "Dual-guide RNA sequences",
+  "Adeno-associated viral vector delivery",
+  "Hippocampal neurons",
+  "Quantitative proteomics analysis",
+  "Soluble amyloid-beta oligomers",
+  "Amyloid plaque burden",
+  "Cognitive assessments",
+  "Morris water maze testing",
+  "Spatial memory retention",
+  "Off-target editing analysis",
+  "Whole-genome sequencing",
+  "Neurodegenerative pathology",
+  "Long-term safety profiles",
+  "Immunogenicity responses"
+]
+```</pre></td>
+                <td class="score-col"><span class="score score-high">9</span></td>
+                <td class="reasoning">The solution fully satisfies all mandatory requirements: it is a valid JSON array of strings containing topics without commentary. Regarding secondary criteria, it effectively extracts main research topics distinct from methodological details and identifies all major scientific domains. While a few items blur the line between core topics and methodological procedures, the overall extraction appropriately omits numerical values, statistical measures, and specific experimental procedures. The solution demonstrates strong judgment in topic selection and domain coverage.</td>
+            </tr>
+        
+            <tr>
+                <td>Testing with an interdisciplinary passage that spans multiple fields (e.g., environmental science + economics) to verify correct topic extraction across domain boundaries</td>
+                <td class="prompt-inputs"><strong>content:</strong> Climate change mitigation strategies increasingly intersect with economic development pathways in developing nations. Carbon pricing mechanisms, such as cap-and-trade systems, have demonstrated capacity to reduce industrial emissions by 15-20% while generating revenue streams for renewable energy infrastructure. However, these policies create complex trade-offs with labor-intensive manufacturing sectors, potentially displacing workers in coal-dependent regions. Simultaneously, ecosystem services valuation—quantifying benefits from forest carbon sequestration and wetland preservation—reveals that conservation-based approaches can generate equivalent economic returns to extraction industries while maintaining biodiversity. Recent studies show that integrated natural capital accounting in national GDP calculations could redirect investment toward sustainable agriculture and green infrastructure development.</td>
+                <td class="criteria">• Extracts topics spanning both environmental science and economics domains<br>• Identifies all major topic areas without omissions<br>• Returns output as a JSON array of strings</td>
+                <td class="output"><pre>```json
+[
+  "Climate change mitigation strategies",
+  "Economic development pathways",
+  "Carbon pricing mechanisms",
+  "Cap-and-trade systems",
+  "Industrial emissions reduction",
+  "Renewable energy infrastructure",
+  "Labor-intensive manufacturing sectors",
+  "Coal-dependent regions",
+  "Worker displacement",
+  "Ecosystem services valuation",
+  "Forest carbon sequestration",
+  "Wetland preservation",
+  "Conservation-based approaches",
+  "Biodiversity maintenance",
+  "Natural capital accounting",
+  "GDP calculations",
+  "Sustainable agriculture",
+  "Green infrastructure development",
+  "Extraction industries"
+]
+```</pre></td>
+                <td class="score-col"><span class="score score-high">9</span></td>
+                <td class="reasoning">The solution fully satisfies all mandatory requirements: it is a JSON array of strings containing topics from the article, with no commentary, and nothing else in the response. It meets the secondary criteria by spanning both environmental and economic domains and identifying major topic areas. The extraction is thorough and well-organized. Minor weaknesses exist in topic granularity and a couple of omissions, but these do not significantly detract from the overall quality of the extraction.</td>
+            </tr>
+        
+            <tr>
+                <td>Testing with a passage containing overlapping or hierarchical topics to ensure the extraction identifies distinct concepts without redundancy or over-granularity</td>
+                <td class="prompt-inputs"><strong>content:</strong> This study examines the intersection of climate change mitigation and sustainable urban development through the lens of green infrastructure. We analyze how urban forests reduce ambient temperature through evapotranspiration while simultaneously sequestering carbon dioxide and improving air quality. Additionally, permeable pavements address stormwater management by reducing flooding and groundwater contamination, which are critical components of climate adaptation strategies. The economic implications of these nature-based solutions are substantial, with ecosystem services valuations demonstrating cost-effectiveness compared to traditional gray infrastructure approaches. Our findings suggest that integrating biodiversity conservation within urban planning frameworks creates synergistic benefits across climate, environmental health, and economic dimensions.</td>
+                <td class="criteria">• Extracts distinct topics without redundant duplication (e.g., does not list both 'climate change mitigation' and 'carbon sequestration' as separate topics when the latter is a mechanism of the former)<br>• Identifies all major concepts at an appropriate level of granularity (neither overly broad nor excessively fragmented)<br>• Returns results as a JSON array of strings with proper formatting</td>
+                <td class="output"><pre>```json
+[
+  "climate change mitigation",
+  "sustainable urban development",
+  "green infrastructure",
+  "urban forests",
+  "evapotranspiration",
+  "carbon dioxide sequestration",
+  "air quality improvement",
+  "permeable pavements",
+  "stormwater management",
+  "flooding reduction",
+  "groundwater contamination",
+  "climate adaptation strategies",
+  "ecosystem services valuation",
+  "nature-based solutions",
+  "gray infrastructure",
+  "biodiversity conservation",
+  "urban planning frameworks",
+  "economic implications",
+  "environmental health"
+]
+```</pre></td>
+                <td class="score-col"><span class="score score-high">8</span></td>
+                <td class="reasoning">The solution meets all mandatory requirements: it is a valid JSON array of strings containing topics from the article with no commentary, and the response contains only the JSON array. Regarding secondary criteria, the solution demonstrates strong topic identification at mostly appropriate granularity levels. However, there are minor violations of the non-redundancy criterion. The passage explicitly frames 'stormwater management' as the overarching concept, with flooding reduction and groundwater contamination as specific problems it addresses—these should arguably be consolidated. Similarly, 'gray infrastructure' is mentioned only as a comparison point for cost-effectiveness, not as a substantive topic of study. These issues are relatively minor and don't significantly impact the overall quality, as most entries are well-chosen and non-redundant.</td>
+            </tr>
+        
+            </tbody>
+        </table>
+    </body>
+    </html>
+    

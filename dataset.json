@@ -1,0 +1,51 @@
+[
+  {
+    "prompt_inputs": {
+      "content": "Kant's categorical imperative fundamentally reshaped moral philosophy by proposing that ethical actions must be universalizable principles rather than contingent desires. This Enlightenment framework emerged during the 18th century as a response to empiricist challenges posed by Hume, who argued that reason alone could not ground morality. The distinction between noumena and phenomena became central to Kantian epistemology, suggesting that our knowledge is necessarily limited to appearances filtered through the structures of space and time. Later, Hegelian dialectics reinterpreted this framework through historical materialism, arguing that consciousness develops through contradictions resolved in successive epochs. These philosophical developments profoundly influenced subsequent thinkers including Nietzsche, who critiqued the ascetic ideal embedded in Kantian ethics, and Marx, who grounded dialectical reasoning in economic relations rather than abstract reason."
+    },
+    "solution_criteria": [
+      "Extracts all major philosophical concepts and theories mentioned (e.g., categorical imperative, empiricism, dialectics)",
+      "Includes proper nouns referring to key figures and philosophical traditions (e.g., Kant, Hume, Hegelian)",
+      "Captures abstract concepts and historical periods relevant to the passage (e.g., Enlightenment, historical materialism)",
+      "Returns output as a JSON array of strings with no duplicate entries"
+    ],
+    "task_description": "\n    Extract topics out of a passages of text from a scholarly article into a JSON array of strings\n    ",
+    "scenario": "Testing with a humanities passage containing philosophical and historical topics mixed with proper nouns and abstract concepts"
+  },
+  {
+    "prompt_inputs": {
+      "content": "This study investigates the efficacy of CRISPR-Cas9 gene editing in reducing amyloid-beta accumulation within transgenic mouse models of Alzheimer's disease. We employed dual-guide RNA sequences targeting the BACE1 gene, a critical protease in amyloid precursor protein cleavage, combined with adeno-associated viral vector delivery to achieve sustained expression in hippocampal neurons. Quantitative proteomics analysis revealed a 67% reduction in soluble amyloid-beta oligomers and a 43% decrease in insoluble plaque burden compared to control cohorts after 12 weeks of treatment. Cognitive assessments using Morris water maze testing demonstrated significant improvements in spatial memory retention, with treated animals exhibiting 34% faster acquisition times and 28% increased platform zone occupancy. Notably, off-target editing analysis using whole-genome sequencing identified minimal off-target cleavage events, with only 2 potential sites showing marginal activity. These findings suggest CRISPR-Cas9-mediated BACE1 suppression as a viable therapeutic strategy for neurodegenerative pathology, though long-term safety profiles and immunogenicity responses require further investigation."
+    },
+    "solution_criteria": [
+      "Extracts main research topics (CRISPR-Cas9 gene editing, amyloid-beta reduction, Alzheimer's disease models) distinct from methodological details and quantitative results",
+      "Identifies all distinct scientific domains covered (gene editing technology, molecular pathology, cognitive assessment, genomic analysis)",
+      "Omits specific numerical values, statistical measures, and experimental procedures that are supporting details rather than core topics"
+    ],
+    "task_description": "\n    Extract topics out of a passages of text from a scholarly article into a JSON array of strings\n    ",
+    "scenario": "Testing with a scientific passage containing domain-specific terminology, methodologies, and empirical findings that require distinguishing main topics from supporting details"
+  },
+  {
+    "prompt_inputs": {
+      "content": "Climate change mitigation strategies increasingly intersect with economic development pathways in developing nations. Carbon pricing mechanisms, such as cap-and-trade systems, have demonstrated capacity to reduce industrial emissions by 15-20% while generating revenue streams for renewable energy infrastructure. However, these policies create complex trade-offs with labor-intensive manufacturing sectors, potentially displacing workers in coal-dependent regions. Simultaneously, ecosystem services valuation\u2014quantifying benefits from forest carbon sequestration and wetland preservation\u2014reveals that conservation-based approaches can generate equivalent economic returns to extraction industries while maintaining biodiversity. Recent studies show that integrated natural capital accounting in national GDP calculations could redirect investment toward sustainable agriculture and green infrastructure development."
+    },
+    "solution_criteria": [
+      "Extracts topics spanning both environmental science and economics domains",
+      "Identifies all major topic areas without omissions",
+      "Returns output as a JSON array of strings"
+    ],
+    "task_description": "\n    Extract topics out of a passages of text from a scholarly article into a JSON array of strings\n    ",
+    "scenario": "Testing with an interdisciplinary passage that spans multiple fields (e.g., environmental science + economics) to verify correct topic extraction across domain boundaries"
+  },
+  {
+    "prompt_inputs": {
+      "content": "This study examines the intersection of climate change mitigation and sustainable urban development through the lens of green infrastructure. We analyze how urban forests reduce ambient temperature through evapotranspiration while simultaneously sequestering carbon dioxide and improving air quality. Additionally, permeable pavements address stormwater management by reducing flooding and groundwater contamination, which are critical components of climate adaptation strategies. The economic implications of these nature-based solutions are substantial, with ecosystem services valuations demonstrating cost-effectiveness compared to traditional gray infrastructure approaches. Our findings suggest that integrating biodiversity conservation within urban planning frameworks creates synergistic benefits across climate, environmental health, and economic dimensions."
+    },
+    "solution_criteria": [
+      "Extracts distinct topics without redundant duplication (e.g., does not list both 'climate change mitigation' and 'carbon sequestration' as separate topics when the latter is a mechanism of the former)",
+      "Identifies all major concepts at an appropriate level of granularity (neither overly broad nor excessively fragmented)",
+      "Returns results as a JSON array of strings with proper formatting"
+    ],
+    "task_description": "\n    Extract topics out of a passages of text from a scholarly article into a JSON array of strings\n    ",
+    "scenario": "Testing with a passage containing overlapping or hierarchical topics to ensure the extraction identifies distinct concepts without redundancy or over-granularity"
+  }
+]

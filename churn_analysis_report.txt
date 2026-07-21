@@ -1,0 +1,156 @@
+====================================================================================================
+STREAMING SERVICE CHURN ANALYSIS - DETAILED REPORT
+====================================================================================================
+
+EXECUTIVE SUMMARY
+----------------------------------------------------------------------------------------------------
+Total Users Analyzed: 500
+Churned Users: 193
+Retained Users: 307
+Overall Churn Rate: 38.60%
+
+====================================================================================================
+MAJOR CHURN DRIVERS (Ranked by Importance)
+====================================================================================================
+
+#1. LOW ENGAGEMENT - Total Viewing Hours
+   Feature Importance Score: 0.2481
+   Finding: Churned users watch 20% LESS content (66.6 hrs vs 83.2 hrs)
+   Insight: Users who are less engaged with the platform are significantly more likely to churn.
+   Recommendation: Implement early warning system for users with declining viewing hours. Send personalized content recommendations to re-engage low-activity users.
+
+#2. SHORTER SESSION DURATION
+   Feature Importance Score: 0.1728
+   Finding: Churned users have 14% shorter sessions (49.4 min vs 57.8 min)
+   Insight: Shorter sessions indicate content not compelling enough to keep users watching.
+   Recommendation: Improve content discovery and autoplay features. Analyze why sessions end prematurely and optimize content recommendations.
+
+#3. LIMITED CONTENT VARIETY - Unique Titles Watched
+   Feature Importance Score: 0.1685
+   Finding: Churned users watch 18% fewer unique titles (19.5 vs 23.7)
+   Insight: Users exploring less content diversity are not finding enough value.
+   Recommendation: Diversify recommendations. Create themed collections to encourage exploration of different content.
+
+#4. CUSTOMER SERVICE ISSUES
+   Feature Importance Score: 0.1292
+   Finding: Churned users have 28% MORE customer service interactions (3.18 vs 2.49)
+   Insight: High CS interactions correlate with dissatisfaction and technical/billing issues.
+   Recommendation: Improve first-contact resolution. Proactively reach out to users with 3+ CS contacts to address underlying issues.
+
+#5. CONTENT GENRE PREFERENCES
+   Feature Importance Score: 0.1087
+   Finding: Horror (52.3% churn) and Thriller (48.3% churn) genres show highest churn rates
+   Insight: Certain genre preferences correlate with higher churn, possibly due to content library gaps.
+   Recommendation: Expand content library in high-churn genres. Cross-promote related genres to diversify user interests.
+
+====================================================================================================
+SUBSCRIPTION TIER ANALYSIS
+====================================================================================================
+
+Churn by Subscription Tier:
+----------------------------------------------------------------------------------------------------
+Basic     :  43.5% churn rate | 207 users | Avg viewing:  70.6 hrs | Cost: $7.99/mo
+Standard  :  39.5% churn rate | 210 users | Avg viewing:  80.6 hrs | Cost: $12.99/mo
+Premium   :  24.1% churn rate |  83 users | Avg viewing:  82.7 hrs | Cost: $17.99/mo
+
+KEY INSIGHT: Basic tier shows 43.5% churn vs Premium at 24.1%
+This 19.4 percentage point difference suggests:
+  - Price-sensitive customers on Basic tier may not perceive sufficient value
+  - Premium features/content create stronger engagement and retention
+  - Consider adding mid-tier value features or improving Basic tier content quality
+
+====================================================================================================
+TOP GENRE ANALYSIS
+====================================================================================================
+
+Churn Rate by Top Genre (Ranked Highest to Lowest):
+----------------------------------------------------------------------------------------------------
+Horror         :  52.3% |  44 users |  23 churned
+Thriller       :  48.3% |  29 users |  14 churned
+Action         :  44.6% |  74 users |  33 churned
+Romance        :  41.8% |  55 users |  23 churned
+SciFi          :  40.5% |  42 users |  17 churned
+Drama          :  35.3% | 102 users |  36 churned
+Comedy         :  33.0% | 100 users |  33 churned
+Documentary    :  25.9% |  54 users |  14 churned
+
+HIGH-RISK GENRES (>40% churn): Horror, Thriller, Action, Romance
+LOW-RISK GENRES (<35% churn): Comedy, Documentary
+
+====================================================================================================
+ENGAGEMENT PATTERN COMPARISON
+====================================================================================================
+
+Metric                                       Retained      Churned      Difference
+----------------------------------------------------------------------------------------------------
+Total Viewing Hours Last Month                 83.2 hou       66.6 hou      -20.0%
+Binge Watching Sessions                         7.7 ses        6.2 ses      -19.7%
+Unique Titles Watched                          23.7 tit       19.5 tit      -18.1%
+Average Session Duration                       57.8 min       49.4 min      -14.4%
+
+CRITICAL FINDING: All engagement metrics are significantly lower for churned users
+This indicates churn is primarily driven by declining engagement, not sudden decisions.
+
+====================================================================================================
+ACTIONABLE RECOMMENDATIONS (Prioritized)
+====================================================================================================
+
+IMMEDIATE (Week 1-2):
+  1. Implement viewing hours monitoring system with automated alerts for users showing 20%+ decline
+  2. Create retention campaign targeting Basic tier users with CS interactions ≥3
+  3. Deploy personalized content recommendations for users with <50 viewing hours/month
+
+SHORT-TERM (Month 1-2):
+  1. Enhance content discovery UI to increase unique titles watched per user
+  2. Launch genre-specific content expansion, prioritizing Horror, Thriller, and Action
+  3. Improve customer service resolution process - reduce need for multiple contacts
+  4. A/B test Premium tier features on high-risk Basic users as retention incentive
+
+MEDIUM-TERM (Month 3-6):
+  1. Develop predictive churn model based on engagement decline patterns
+  2. Create 'content freshness' notifications to re-engage low-activity users
+  3. Implement tier upgrade incentive program for engaged Basic users
+  4. Build user segmentation strategy based on genre preferences and engagement levels
+
+====================================================================================================
+HIGH-RISK USER SEGMENTS FOR TARGETED INTERVENTION
+====================================================================================================
+
+Segment 1: Low Engagement Basic Users
+  - Count: 54 users
+  - Churn Rate: 57.4%
+  - Action: Offer personalized content picks + consider limited-time Premium trial
+
+Segment 2: High CS Interaction Users
+  - Count: 127 users
+  - Churn Rate: 59.1%
+  - Action: Priority outreach to resolve issues + service credit consideration
+
+Segment 3: Horror/Thriller Fans with Low Variety
+  - Count: 15 users
+  - Churn Rate: 80.0%
+  - Action: Curated genre-expansion recommendations + new content alerts
+
+====================================================================================================
+CONCLUSION
+====================================================================================================
+
+The analysis reveals that churn is fundamentally an ENGAGEMENT problem, not a pricing problem.
+Users who churn show consistent patterns of lower engagement across all metrics:
+
+  • 20% less viewing time
+  • 18% fewer unique titles explored
+  • 14% shorter session durations
+  • 20% fewer binge-watching sessions
+
+The presence of elevated customer service interactions (+28%) among churned users suggests
+that technical issues or service problems accelerate churn decisions for already-disengaged users.
+
+SUCCESS METRICS TO TRACK:
+  1. Reduce average viewing hour decline rate by 30% within 90 days
+  2. Increase unique titles per user by 15% for at-risk segments
+  3. Reduce CS interactions per user from 2.8 to <2.0
+  4. Lower Basic tier churn from 43.5% to <35% within 6 months
+  5. Overall churn reduction target: 38.6% → 30% (22% improvement)
+
+====================================================================================================
