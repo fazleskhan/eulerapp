@@ -1,0 +1,4 @@
+ipykernel
+anthropic
+python-dotenv
+voyageai
