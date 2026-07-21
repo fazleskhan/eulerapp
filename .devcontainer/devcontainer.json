@@ -9,8 +9,32 @@
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	// "features": {},
 
+	// Adds Node.js and npm via Dev Container Features
+  	"features": {
+    	"ghcr.io/devcontainers/features/node:1": {
+      	"version": "latest"
+    	}
+  	},
+
+
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// "forwardPorts": [],
+
+  	"forwardPorts": [
+    	6274,
+    	6277
+  	],
+
+  	"portsAttributes": {
+    	"6274": {
+      	"label": "MCP Inspector UI",
+      	"onAutoForward": "silent"
+    	},
+    	"6277": {
+      	"label": "MCP Inspector Proxy",
+      	"onAutoForward": "silent"
+    	}
+  	},
 
 	// Use 'postCreateCommand' to run commands after the container is created.
 	// "postCreateCommand": "pip3 install --user -r requirements.txt",
@@ -28,7 +52,9 @@
 			"settings": {
         		"python.envFile": "${workspaceFolder}/.env",
         		"terminal.useEnvFile": true,
- 				"python.analysis.typeCheckingMode": "off"
+ 				"python.analysis.typeCheckingMode": "off",
+				"workbench.browser.enableRemoteProxy": true,
+        		"workbench.browser.dataStorage": "workspace"				
 			}
 		}
 	}	
