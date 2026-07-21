@@ -1,6 +1,9 @@
+import os
 from markitdown import MarkItDown, StreamInfo
 from io import BytesIO
 from pydantic import Field
+
+SUPPORTED_DOCUMENT_EXTENSIONS = {".pdf", ".docx"}
 
 
 def binary_document_to_markdown(binary_data: bytes, file_type: str) -> str:
@@ -34,6 +37,12 @@ def document_path_to_markdown(
     >>> document_path_to_markdown("/path/to/report.pdf")
     '# Report\\n\\n...'
     """
+    extension = os.path.splitext(path)[1].lower()
+    if extension not in SUPPORTED_DOCUMENT_EXTENSIONS:
+        raise ValueError(
+            f"Unsupported file extension {extension!r} for path {path!r}; "
+            f"document_path_to_markdown only supports {sorted(SUPPORTED_DOCUMENT_EXTENSIONS)} files"
+        )
     md = MarkItDown()
     result = md.convert(path)
     return result.text_content
