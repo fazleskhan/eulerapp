@@ -3,3 +3,4 @@ anthropic
 python-dotenv
 ipywidgets
 voyageai
+uv
