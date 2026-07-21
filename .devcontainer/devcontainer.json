@@ -23,11 +23,12 @@
 			"extensions": [
 				"ms-toolsai.jupyter",
 				"tomoki1207.pdf",
-				"ms-python.vscode-python-envs",
+				"ms-python.vscode-python-envs"
 			],
 			"settings": {
         		"python.envFile": "${workspaceFolder}/.env",
-        		"terminal.useEnvFile": true				
+        		"terminal.useEnvFile": true,
+ 				"python.analysis.typeCheckingMode": "off"
 			}
 		}
 	}	
