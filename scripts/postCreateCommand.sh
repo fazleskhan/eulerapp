@@ -14,3 +14,6 @@ sudo apt upgrade -y
 sudo apt install python-is-python3
 
 pip install -r requirements.txt
+
+# prevent changes to the .env file from being commited to the repo
+git update-index --skip-worktree .env
