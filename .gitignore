@@ -275,3 +275,4 @@ __marimo__/
 
 .env
 .ipynb_checkpoints
+.backups/
